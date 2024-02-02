@@ -112,6 +112,6 @@ function generateReadmeContent(answers) {
   ## Any Questions?
   - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.contact})
 
-  - You can also email me directly at [email](mailto:${answers.email})
+  - You can also email me directly at [email](${answers.email})
   `;
 }
