@@ -1,27 +1,21 @@
 # undefined
-
-## Description
-
-undefined
-
-## Getting Started
-
-### Installation
-
-undefined
-
-### Usage
-
-undefined
-
-## Contributing
-
-undefined
-
-## License
-
-This project is licensed under the undefined License - see the [LICENSE.md](https://github.com/F3N215) file for details.
-
-## Acknowledgments
-
-- Any external resources or contributors you want to acknowledge.
+  
+  ## Description
+  undefined
+  
+  ## Getting Started
+  ### Installation
+  Download it from github!
+  
+  ### Usage
+  It's about making projects for other projects while you work on your project.
+  
+  ## Contributing
+  undefined
+  
+  ## License
+  This project is licensed under the Free to use! License - see the [LICENSE.md](package.json) file for details.
+  
+  ## Any Questions?
+  - Reach out to me on GitHub - here's my [Github](https://github.com/F3N215))
+  

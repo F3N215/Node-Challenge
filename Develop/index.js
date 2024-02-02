@@ -55,12 +55,12 @@ const questions = [
   {
     type: "input",
     name: "contact",
-    message: "What's your username onGitHub?",
+    message: "What's your GitHub username?",
   },
   {
     type: "input",
-    name: "Github Username",
-    message: "What's your GitHub username?",
+    name: "email",
+    message: "What's your email?",
   },
 ];
 
@@ -110,6 +110,8 @@ function generateReadmeContent(answers) {
   This project is licensed under the ${answers.license} License - see the [LICENSE.md](package.json) file for details.
   
   ## Any Questions?
-  - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.contact}))
+  - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.contact})
+
+  - You can also email me directly at [email](mailto:${answers.email})
   `;
 }
