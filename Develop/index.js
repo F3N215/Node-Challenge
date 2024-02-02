@@ -41,12 +41,13 @@ function newFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
   newFile();
-  inquirer
-    .prompt(questions)
-    .then((answers) => console.log(JSON.stringify(answers, null, 2)));
+  inquirer.prompt(questions).then((answers) => writeToFile);
 }
 
-function writeToFile(answers) {}
+function writeToFile(answers) {
+  let name = answers["Project Name"];
+  console.log(name);
+}
 
 // Function call to initialize app
 init();
