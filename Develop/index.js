@@ -30,31 +30,33 @@ const questions = [
   {
     type: "input",
     name: "installation",
-    message: "How do you install your project?"
+    message: "How do you install your project?",
   },
   {
     type: "input",
     name: "usage",
-    message: "What is your project used for?"
+    message: "What is your project used for?",
   },
   {
     type: "input",
     name: "license",
-    message: "Which license is your project?"
+    message: "Which license is your project?",
   },
   {
     type: "input",
     name: "contribute",
-    message: "How can people contribute to your project?"
+    message: "How can people contribute to your project?",
   },
   {
     type: "input",
     name: "test",
-    message: "How do you test your project?"
+    message: "How do you test your project?",
   },
   {
-
-  }
+    type: "input",
+    name: "contact",
+    message: "What's your username onGitHub?",
+  },
   {
     type: "input",
     name: "Github Username",
@@ -88,7 +90,6 @@ function writeToFile(answers) {
 // Function call to initialize app
 init();
 
-//
 function generateReadmeContent(answers) {
   return `# ${answers.projectTitle}
   
@@ -109,6 +110,6 @@ function generateReadmeContent(answers) {
   This project is licensed under the ${answers.license} License - see the [LICENSE.md](package.json) file for details.
   
   ## Any Questions?
-  - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.githubUserName}))
+  - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.contact}))
   `;
 }
