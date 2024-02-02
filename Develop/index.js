@@ -27,10 +27,11 @@ const questions = [
     name: "confirm",
     message: "Save to file?",
   },
-  // {
-  //   type: "input",
-  //   name: "",
-  // },
+  {
+    type: "input",
+    name: "Github Username",
+    message: "What's your GitHub username?",
+  },
 ];
 
 // TODO: Create a function to write README file
@@ -41,13 +42,45 @@ function newFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
   newFile();
-  inquirer.prompt(questions).then((answers) => writeToFile);
+  inquirer.prompt(questions).then((answers) => writeToFile(answers));
 }
 
 function writeToFile(answers) {
-  let name = answers["Project Name"];
-  console.log(name);
+  //   let name = answers["Project Name"];
+  //   let description = answers["Describe your project!"];
+  //   let table = answers["Table of Contents"];
+  fs.writeFile("READMEtest2.md", generateReadmeContent(answers), () => {});
+  //   fs.appendFile("README_test.md", `# ${name}\n`, () => {}); // string interpolation to create md
+  //   fs.appendFile("README_test.md", `## ${description}\n`, () => {});
+  //   fs.appendFile("README_test.md", `### ${table}\n`, () => {});
+
+  //fs.appendFile("README_test.md", `#### ${name}\n`, () => {});
 }
 
 // Function call to initialize app
 init();
+
+//
+function generateReadmeContent(answers) {
+  return `# ${answers.projectTitle}
+  
+  ## Description
+  ${answers.projectDescription}
+  
+  ## Getting Started
+  ### Installation
+  ${answers.installation}
+  
+  ### Usage
+  ${answers.usage}
+  
+  ## Contributing
+  ${answers.contributing}
+  
+  ## License
+  This project is licensed under the ${answers.license} License - see the [LICENSE.md](package.json) file for details.
+  
+  ## Any Questions?
+  - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.githubUserName}))
+  `;
+}
