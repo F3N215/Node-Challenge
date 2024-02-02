@@ -29,6 +29,34 @@ const questions = [
   },
   {
     type: "input",
+    name: "installation",
+    message: "How do you install your project?"
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "What is your project used for?"
+  },
+  {
+    type: "input",
+    name: "license",
+    message: "Which license is your project?"
+  },
+  {
+    type: "input",
+    name: "contribute",
+    message: "How can people contribute to your project?"
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "How do you test your project?"
+  },
+  {
+
+  }
+  {
+    type: "input",
     name: "Github Username",
     message: "What's your GitHub username?",
   },
