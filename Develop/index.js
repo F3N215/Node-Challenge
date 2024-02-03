@@ -119,9 +119,19 @@ function writeToFile(answers) {
   //   let name = answers["Project Name"];
   //   let description = answers["Describe your project!"];
   //   let table = answers["Table of Contents"];
-  fs.writeFile("README_test.md", generateReadmeContent(answers), () => {});
+  fs.writeFile("README_test.md", generateReadmeContent(answers), () => {
+    generateLicenseFile(answers.license);
+  });
 }
 
+function generateLicenseInfo(licenseType)
+ {
+    let licenseText = "";
+    switch (licenseType){
+        case "MIT":
+            licenseText = 'MIT License\n\n
+    }
+ }
 // Function call to initialize app
 init();
 
@@ -129,7 +139,7 @@ function generateReadmeContent(answers) {
   const badgeCode = `[![License](https://img.shields.io/badge/License-${answers.license}-blue.svg)](https://opensource.org/licenses/${answers.license})`;
 
   const licenseNote = `## License\n
-  This project is licensed under the ${answers.license} License - please see `;
+  This project is licensed under the ${answers.license} License - please see [LICENSE.md](LICENSE.md) file for details.`;
 
   return `
   # Project Name: ${answers.title}
@@ -152,8 +162,8 @@ function generateReadmeContent(answers) {
   ## Testing
   ${answers.test}
   
-  ${badgeCode}
   ${licenseNote}
+  ${badgeCode}
   
   ## Any Questions?
   - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.contact})
