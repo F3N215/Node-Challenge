@@ -38,9 +38,49 @@ const questions = [
     message: "What is your project used for?",
   },
   {
-    type: "input",
+    type: "list",
     name: "license",
-    message: "Which license is your project?",
+    message: "Select a license for your project:",
+    choices: [
+      "Apache-2.0",
+      "ISC",
+      "Artistic-2.0",
+      "BSL-1.0",
+      "BSD-2-Clause",
+      "BSD-3-Clause",
+      "BSD-4-Clause",
+      "0BSD",
+      "CC",
+      "CC0-1.0",
+      "CC-BY-4.0",
+      "CC-BY-SA-4.0",
+      "WTFPL",
+      "ECL-2.0",
+      "EPL-1.0",
+      "EPL-2.0",
+      "EUPL-1.1",
+      "AGPL-3.0",
+      "GPL",
+      "GPL-2.0",
+      "GPL-3.0",
+      "LGPL",
+      "LGPL-2.1",
+      "LGPL-3.0",
+      "ISC",
+      "LPPL-3.0",
+      "ISC",
+      "LPPL-1.3c",
+      "MS-PL",
+      "MIT",
+      "MPL-2.0",
+      "OSL-3.0",
+      "PostgreSQL",
+      "OFL-1.1",
+      "NCSA",
+      "Unlicense",
+      "Zlib",
+      "None",
+    ],
   },
   {
     type: "input",
@@ -91,9 +131,12 @@ function writeToFile(answers) {
 init();
 
 function generateReadmeContent(answers) {
+  const badgeCode = `[!License](https://img.shields.io/badge/License-${answers.license}-blue.svg)](LICENSE`;
+
+  const licenseNote = `## License\n
+  This project is licensed under the ${answers.license} License - please see `;
   return `
-  #
-  ${answers.title}
+  # Project Name: ${answers.title}
   
   ## Description
   ${answers.description}
@@ -109,6 +152,9 @@ function generateReadmeContent(answers) {
   
   ## Contributing
   ${answers.contributing}
+
+  ## Testing
+  ${answers.test}
   
   ## License
   This project is licensed under the ${answers.license} License - see the [LICENSE.md](LICENSE.md) file for details.
