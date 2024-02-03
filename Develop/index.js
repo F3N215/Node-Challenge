@@ -157,7 +157,6 @@ function generateReadmeContent(answers) {
   ## Testing
   ${answers.test}
   
-  ## License
   ${badgeCode}
   ${licenseNote}
   

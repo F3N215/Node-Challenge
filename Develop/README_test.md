@@ -1,33 +1,32 @@
 
-  # Project Name: Projection
+  # Project Name: p
   
   ## Description
-  Projector
+  p
   
   ## Table of Contents
-  Table
+  p
 
   ## Installation
-  from github dude
+  p
   
   ### Usage
-  for projectors
+  p
   
   ## Contributing
   undefined
 
   ## Testing
-  download
+  p
   
   ## License
-  This project is licensed under the Artistic-2.0 License - see the [LICENSE.md](LICENSE.md) file for details.
-  [!License](https://img.shields.io/badge/License-Artistic-2.0-blue.svg)](LICENSE)
+  [![License](https://img.shields.io/badge/License-Apache-2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
   ## License
 
-  This project is licensed under the Artistic-2.0 License - please see 
+  This project is licensed under the Apache-2.0 License - please see 
   
   ## Any Questions?
-  - Reach out to me on GitHub - here's my [Github](https://github.com/f3n215)
+  - Reach out to me on GitHub - here's my [Github](https://github.com/p)
 
-  - You can also email me directly at [email](dcampo85@gmail.com)
+  - You can also email me directly at [email](p)
   
