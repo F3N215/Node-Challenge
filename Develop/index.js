@@ -1,5 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
+const axios = require("axios");
 const fs = require("fs");
 
 // TODO: Create an array of questions for user input
@@ -124,14 +125,35 @@ function writeToFile(answers) {
   });
 }
 
-function generateLicenseInfo(licenseType)
- {
-    let licenseText = "";
-    switch (licenseType){
-        case "MIT":
-            licenseText = 'MIT License\n\n
+function fetchLicense(licenseType, callback) {
+  axios
+    .getAdapter(`https://api.opensource.org/licenses/${licenseType}`)
+    .then((respponse) => {
+      callback(null, response.data.text);
+    })
+    .catch((error) => {
+      console.error(
+        `Error fetching license text for ${licenseType}: ${error.message}`
+      );
+      callback(error, null);
+    });
+}
+
+function generateLicenseInfo(licenseType) {
+  fetchLicense(licenseType, (error, licenseText) => {
+    if (!error && licenseText) {
+      fs.writeFile("LICENSE.md", licenseText, (err) => {
+        if (err) throw err;
+        console.log("LICENSE.md file was created.");
+      });
+    } else {
+      console.log(
+        "License text wasn't available, so LICENSE.md wasn't created."
+      );
     }
- }
+  });
+}
+
 // Function call to initialize app
 init();
 
