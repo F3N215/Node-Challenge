@@ -131,10 +131,11 @@ function writeToFile(answers) {
 init();
 
 function generateReadmeContent(answers) {
-  const badgeCode = `[!License](https://img.shields.io/badge/License-${answers.license}-blue.svg)](LICENSE`;
+  const badgeCode = `[![License](https://img.shields.io/badge/License-${answers.license}-blue.svg)](https://opensource.org/licenses/${answers.license})`;
 
   const licenseNote = `## License\n
   This project is licensed under the ${answers.license} License - please see `;
+
   return `
   # Project Name: ${answers.title}
   
@@ -157,7 +158,8 @@ function generateReadmeContent(answers) {
   ${answers.test}
   
   ## License
-  This project is licensed under the ${answers.license} License - see the [LICENSE.md](LICENSE.md) file for details.
+  ${badgeCode}
+  ${licenseNote}
   
   ## Any Questions?
   - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.contact})

@@ -1,24 +1,30 @@
 
-  #
-  Projector
+  # Project Name: Projection
   
   ## Description
-  It's a project about projects that project things about projecting
+  Projector
   
   ## Table of Contents
-  This is the table of contents
+  Table
 
   ## Installation
-  You download it from github
+  from github dude
   
   ### Usage
-  Projecting
+  for projectors
   
   ## Contributing
   undefined
+
+  ## Testing
+  download
   
   ## License
-  This project is licensed under the Free to use License - see the [LICENSE.md](LICENSE.md) file for details.
+  This project is licensed under the Artistic-2.0 License - see the [LICENSE.md](LICENSE.md) file for details.
+  [!License](https://img.shields.io/badge/License-Artistic-2.0-blue.svg)](LICENSE)
+  ## License
+
+  This project is licensed under the Artistic-2.0 License - please see 
   
   ## Any Questions?
   - Reach out to me on GitHub - here's my [Github](https://github.com/f3n215)
