@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const axios = require("axios");
 const fs = require("fs");
@@ -118,13 +117,13 @@ function init() {
 
 function writeToFile(answers) {
   fs.writeFile("README_test.md", generateReadmeContent(answers), () => {
-    generateLicenseFile(answers.license);
+    generateLicenseInfo(answers.license);
   });
 }
 
 function fetchLicense(licenseType, callback) {
   axios
-    .getAdapter(`https://api.opensource.org/licenses/${licenseType}`)
+    .get(`https://api.opensource.org/licenses/${licenseType}`)
     .then((respponse) => {
       callback(null, response.data.text);
     })
