@@ -117,9 +117,6 @@ function init() {
 }
 
 function writeToFile(answers) {
-  //   let name = answers["Project Name"];
-  //   let description = answers["Describe your project!"];
-  //   let table = answers["Table of Contents"];
   fs.writeFile("README_test.md", generateReadmeContent(answers), () => {
     generateLicenseFile(answers.license);
   });
