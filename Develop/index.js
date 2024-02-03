@@ -9,18 +9,18 @@ const questions = [
   // needs to take a list of objects
   {
     type: "input",
-    name: "Project Name",
+    name: "title",
     message: "What's the title of your project?",
   },
   {
     type: "input",
-    name: "Description",
+    name: "description",
     message: "Describe your project!",
   },
   {
     type: "input",
-    name: "Table of Contents",
-    message: "Table of Contents",
+    name: "table",
+    message: "Share a Table of Contents",
   },
   {
     type: "confirm",
@@ -91,13 +91,17 @@ function writeToFile(answers) {
 init();
 
 function generateReadmeContent(answers) {
-  return `# ${answers.projectTitle}
+  return `
+  #
+  ${answers.title}
   
   ## Description
-  ${answers.projectDescription}
+  ${answers.description}
   
-  ## Getting Started
-  ### Installation
+  ## Table of Contents
+  ${answers.table}
+
+  ## Installation
   ${answers.installation}
   
   ### Usage
@@ -107,7 +111,7 @@ function generateReadmeContent(answers) {
   ${answers.contributing}
   
   ## License
-  This project is licensed under the ${answers.license} License - see the [LICENSE.md](package.json) file for details.
+  This project is licensed under the ${answers.license} License - see the [LICENSE.md](LICENSE.md) file for details.
   
   ## Any Questions?
   - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.contact})
