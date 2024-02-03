@@ -120,11 +120,6 @@ function writeToFile(answers) {
   //   let description = answers["Describe your project!"];
   //   let table = answers["Table of Contents"];
   fs.writeFile("README_test.md", generateReadmeContent(answers), () => {});
-  //   fs.appendFile("README_test.md", `# ${name}\n`, () => {}); // string interpolation to create md
-  //   fs.appendFile("README_test.md", `## ${description}\n`, () => {});
-  //   fs.appendFile("README_test.md", `### ${table}\n`, () => {});
-
-  //fs.appendFile("README_test.md", `#### ${name}\n`, () => {});
 }
 
 // Function call to initialize app
