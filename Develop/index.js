@@ -129,8 +129,13 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function newFile(fileName, data) {
-  fs.writeFile("README_test.md", " ", () => {}); // a closure
+function writeToFile(fileName, data) {
+  fs.writeFile("./dist/README.md", generateMarkdown(data), function (err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("You did it!");
+  });
 }
 
 // TODO: Create a function to initialize app
@@ -142,19 +147,19 @@ function init() {
   });
 }
 
-function fetchLicense(licenseType, callback) {
-  axios
-    .get(`https://api.opensource.org/licenses/${licenseType}`)
-    .then((response) => {
-      callback(null, response.data.text);
-    })
-    .catch((error) => {
-      console.error(
-        `Error fetching license text for ${licenseType}: ${error.message}`
-      );
-      callback(error, null);
-    });
-}
+// function fetchLicense(licenseType, callback) {
+//   axios
+//     .get(`https://api.opensource.org/licenses/${licenseType}`)
+//     .then((response) => {
+//       callback(null, response.data.text);
+//     })
+//     .catch((error) => {
+//       console.error(
+//         `Error fetching license text for ${licenseType}: ${error.message}`
+//       );
+//       callback(error, null);
+//     });
+// }
 
 function generateLicenseFile(licenseType, readmeContent) {
   fetchLicense(licenseType, (error, licenseText) => {
