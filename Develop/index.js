@@ -116,9 +116,8 @@ function init() {
 }
 
 function writeToFile(answers) {
-  fs.writeFile("README_test.md", generateReadmeContent(answers), () => {
-    generateLicenseInfo(answers.license);
-  });
+  const readmeContent = generateReadmeContent(answers);
+  generateLicenseInfo(answers.license, readmeContent);
 }
 
 function fetchLicense(licenseType, callback) {
@@ -138,14 +137,21 @@ function fetchLicense(licenseType, callback) {
 function generateLicenseInfo(licenseType) {
   fetchLicense(licenseType, (error, licenseText) => {
     if (!error && licenseText) {
-      fs.writeFile("LICENSE.md", licenseText, (err) => {
+      const updatedReadmeContent = `${readmeContent}\n\n## License\n\n${licenseText}`;
+
+      fs.writeFile("README_test.md", updatedReadmeContent, (err) => {
         if (err) throw err;
-        console.log("LICENSE.md file was created.");
+        console.log("License information added to README.md");
       });
     } else {
-      console.log(
-        "License text wasn't available, so LICENSE.md wasn't created."
-      );
+      const defaultLicenseText = `This project is licensed under the ${licenseType} License. No detailed license text available.`;
+
+      const updatedReadmeContent = `${readmeContent}\n\n## License\n\n${defaultLicenseText}`;
+
+      fs.writeFile("README_test.md", updatedReadmeContent, (err) => {
+        if (err) throw err;
+        console.log("Default license information added to README.md");
+      });
     }
   });
 }
