@@ -1,6 +1,30 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license.length === 0) {
+    return "";
+  } else if (license == "Artistic-2.0") {
+    return `[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)`;
+  } else if (license == "Apache") {
+    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+  } else if (license == "BSD-2") {
+    return `[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)`;
+  } else if (license == "BSD-3") {
+    return `[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`;
+  } else if (license == "CC") {
+    return `[!License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)`;
+  } else if (license == "Mozilla") {
+    return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
+  } else if (license == "MIT") {
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+  } else if (license == "GNU") {
+    return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+  } else if (license == "Boost") {
+    return `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`;
+  } else if (license == "ISC") {
+    return `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -42,8 +66,7 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
 
   ## Description
-
-  ${data.projectDescription}
+  ${data.description}
 
   ## Table of Contents
 
@@ -55,27 +78,22 @@ function generateMarkdown(data) {
   * [Questions](#questions)
 
   ## Installation
-
   ${data.installInfo}
 
   ## Usage
-
-  ${data.usageInfo}
+  ${data.useCase}
 
   ${renderLicenseSection(data.license)}
 
   ## Contributing
+  ${data.contribute}
   
-  ${data.contributionsInfo}
-  
-  ## Tests
-  ${data.testsInfo}
+  ## Testing
+  ${data.test}
 
-  ## Questions
-  My GitHub: [${data.githubUsername}](https://github.com/${
-    data.githubUsername
-  }) <br>
-  Email me: ${data.emailInfo}
+  ## Any Questions?
+  My GitHub: [${data.github}](https://github.com/${data.github}) <br>
+  Email me: ${data.email}
 `;
 }
 

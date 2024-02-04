@@ -57,10 +57,8 @@ const questions = [
       "Apache-2.0",
       "ISC",
       "Artistic-2.0",
-      "BSL-1.0",
       "BSD-2-Clause",
       "BSD-3-Clause",
-      "BSD-4-Clause",
       "0BSD",
       "CC",
       "CC0-1.0",
@@ -113,12 +111,12 @@ const questions = [
   },
   {
     type: "input",
-    name: "contact",
+    name: "github",
     message: "What's your GitHub username?",
   },
   {
     type: "input",
-    name: "emailInfo",
+    name: "email",
     message: "What's your email?",
   },
   {
