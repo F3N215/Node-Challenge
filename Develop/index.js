@@ -40,14 +40,9 @@ const questions = [
     message: "Share a Table of Contents",
   },
   {
-    type: "confirm",
-    name: "confirm",
-    message: "Save to file?",
-  },
-  {
     type: "input",
-    name: "installation",
-    message: "How do you install your project?",
+    name: "installInfo",
+    message: "Share any installation instructions here:",
   },
   {
     type: "input",
@@ -55,7 +50,7 @@ const questions = [
     message: "What is your project used for?",
   },
   {
-    type: "list",
+    type: "checkbox",
     name: "license",
     message: "Select a license for your project:",
     choices: [
@@ -98,6 +93,13 @@ const questions = [
       "Zlib",
       "None",
     ],
+    validate: (choicesLength) => {
+      if (choicesLength.length <= 1) {
+        return true;
+      } else {
+        return "Pick a license!";
+      }
+    },
   },
   {
     type: "input",
@@ -118,6 +120,11 @@ const questions = [
     type: "input",
     name: "email",
     message: "What's your email?",
+  },
+  {
+    type: "confirm",
+    name: "confirm",
+    message: "Save to file?",
   },
 ];
 
