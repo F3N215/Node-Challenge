@@ -46,8 +46,8 @@ const questions = [
   },
   {
     type: "input",
-    name: "usage",
-    message: "What is your project used for?",
+    name: "useCase",
+    message: "Describe what your project or application is used for.",
   },
   {
     type: "checkbox",
@@ -118,7 +118,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "email",
+    name: "emailInfo",
     message: "What's your email?",
   },
   {
@@ -135,13 +135,11 @@ function newFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-  newFile();
-  inquirer.prompt(questions).then((answers) => writeToFile(answers));
-}
+  inquirer.prompt(questions).then(function (answer) {
+    const fileName = answer.title.split(" ").join("") + ".md";
 
-function writeToFile(answers) {
-  const readmeContent = generateReadmeContent(answers);
-  generateLicenseFile(answers.license, readmeContent);
+    writeToFile(fileName, answer);
+  });
 }
 
 function fetchLicense(licenseType, callback) {

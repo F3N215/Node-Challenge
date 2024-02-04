@@ -32,8 +32,7 @@ function renderLicenseSection(license) {
 
   ${renderLicenseBadge(license)}
   
-  ${renderLicenseLink(license)} 
-    `;
+  ${renderLicenseLink(license)}`;
   }
 }
 
