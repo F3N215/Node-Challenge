@@ -117,13 +117,13 @@ function init() {
 
 function writeToFile(answers) {
   const readmeContent = generateReadmeContent(answers);
-  generateLicenseInfo(answers.license, readmeContent);
+  generateLicenseFile(answers.license, readmeContent);
 }
 
 function fetchLicense(licenseType, callback) {
   axios
     .get(`https://api.opensource.org/licenses/${licenseType}`)
-    .then((respponse) => {
+    .then((response) => {
       callback(null, response.data.text);
     })
     .catch((error) => {
@@ -134,7 +134,7 @@ function fetchLicense(licenseType, callback) {
     });
 }
 
-function generateLicenseInfo(licenseType) {
+function generateLicenseFile(licenseType, readmeContent) {
   fetchLicense(licenseType, (error, licenseText) => {
     if (!error && licenseText) {
       const updatedReadmeContent = `${readmeContent}\n\n## License\n\n${licenseText}`;
@@ -192,6 +192,6 @@ function generateReadmeContent(answers) {
   ## Any Questions?
   - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.contact})
 
-  - You can also email me directly at [email](${answers.email})
+  - You can also email me directly by [email](${answers.email})
   `;
 }
