@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const axios = require("axios");
+const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require("fs");
 
 // TODO: Create an array of questions for user input
@@ -11,11 +12,27 @@ const questions = [
     type: "input",
     name: "title",
     message: "What's the title of your project?",
+    validate: (titleInput) => {
+      if (titleInput) {
+        return true;
+      } else {
+        console.log("Tell us your project title.");
+        return false;
+      }
+    },
   },
   {
     type: "input",
     name: "description",
-    message: "Describe your project!",
+    message: "Describe your project.",
+    validate: (description) => {
+      if (description) {
+        return true;
+      } else {
+        console.log("Write a short description about your project.");
+        return false;
+      }
+    },
   },
   {
     type: "input",
@@ -181,6 +198,7 @@ function generateReadmeContent(answers) {
   ${answers.usage}
   
   ## Contributing
+  *If you'd like to contribute, follow these instructions for how to do so.*
   ${answers.contributing}
 
   ## Testing
