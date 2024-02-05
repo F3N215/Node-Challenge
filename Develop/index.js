@@ -75,17 +75,17 @@ const questions = [
   {
     type: "input",
     name: "testsInfo",
-    message: "Which tests would you like to include:",
+    message: "Name some tests would you like to include:",
   },
   {
     type: "input",
     name: "githubUsername",
-    message: "What is your GitHub username?",
+    message: "What's your GitHub username?",
   },
   {
     type: "input",
     name: "emailInfo",
-    message: "What is youe email?",
+    message: "What's your email?",
   },
   {
     type: "confirm",
