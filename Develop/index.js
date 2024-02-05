@@ -54,43 +54,18 @@ const questions = [
     name: "license",
     message: "Select a license for your project:",
     choices: [
-      "Apache-2.0",
-      "ISC",
       "Artistic-2.0",
+      "Apache-2.0",
       "BSD-2-Clause",
       "BSD-3-Clause",
-      "0BSD",
       "CC",
-      "CC0-1.0",
-      "CC-BY-4.0",
-      "CC-BY-SA-4.0",
-      "WTFPL",
-      "ECL-2.0",
-      "EPL-1.0",
-      "EPL-2.0",
-      "EUPL-1.1",
-      "AGPL-3.0",
-      "GPL",
-      "GPL-2.0",
-      "GPL-3.0",
-      "LGPL",
-      "LGPL-2.1",
-      "LGPL-3.0",
-      "ISC",
-      "LPPL-3.0",
-      "ISC",
-      "LPPL-1.3c",
-      "MS-PL",
+      "Mozilla",
       "MIT",
-      "MPL-2.0",
-      "OSL-3.0",
-      "PostgreSQL",
-      "OFL-1.1",
-      "NCSA",
-      "Unlicense",
-      "Zlib",
-      "None",
+      "GNU",
+      "Boost",
+      "ISC",
     ],
+
     validate: (choicesLength) => {
       if (choicesLength.length <= 1) {
         return true;
@@ -145,6 +120,9 @@ function init() {
   });
 }
 
+// Function call to initialize app
+init();
+
 // function fetchLicense(licenseType, callback) {
 //   axios
 //     .get(`https://api.opensource.org/licenses/${licenseType}`)
@@ -159,65 +137,24 @@ function init() {
 //     });
 // }
 
-function generateLicenseFile(licenseType, readmeContent) {
-  fetchLicense(licenseType, (error, licenseText) => {
-    if (!error && licenseText) {
-      const updatedReadmeContent = `${readmeContent}\n\n## License\n\n${licenseText}`;
+// function generateLicenseFile(licenseType, readmeContent) {
+//   fetchLicense(licenseType, (error, licenseText) => {
+//     if (!error && licenseText) {
+//       const updatedReadmeContent = `${readmeContent}\n\n## License\n\n${licenseText}`;
 
-      fs.writeFile("README_test.md", updatedReadmeContent, (err) => {
-        if (err) throw err;
-        console.log("License information added to README.md");
-      });
-    } else {
-      const defaultLicenseText = `This project is licensed under the ${licenseType} License. No detailed license text available.`;
+//       fs.writeFile("README_test.md", updatedReadmeContent, (err) => {
+//         if (err) throw err;
+//         console.log("License information added to README.md");
+//       });
+//     } else {
+//       const defaultLicenseText = `This project is licensed under the ${licenseType} License. No detailed license text available.`;
 
-      const updatedReadmeContent = `${readmeContent}\n\n## License\n\n${defaultLicenseText}`;
+//       const updatedReadmeContent = `${readmeContent}\n\n## License\n\n${defaultLicenseText}`;
 
-      fs.writeFile("README_test.md", updatedReadmeContent, (err) => {
-        if (err) throw err;
-        console.log("Default license information added to README.md");
-      });
-    }
-  });
-}
-
-// Function call to initialize app
-init();
-
-function generateReadmeContent(answers) {
-  const badgeCode = `[![License](https://img.shields.io/badge/License-${answers.license}-blue.svg)](https://opensource.org/licenses/${answers.license})`;
-
-  const licenseNote = `## License\n
-  This project is licensed under the ${answers.license} License - please see [LICENSE.md](LICENSE.md) file for details.`;
-
-  return `
-  # Project Name: ${answers.title}
-  
-  ## Description
-  ${answers.description}
-  
-  ## Table of Contents
-  ${answers.table}
-
-  ## Installation
-  ${answers.installation}
-  
-  ### Usage
-  ${answers.usage}
-  
-  ## Contributing
-  *If you'd like to contribute, follow these instructions for how to do so.*
-  ${answers.contributing}
-
-  ## Testing
-  ${answers.test}
-  
-  ${licenseNote}
-  ${badgeCode}
-  
-  ## Any Questions?
-  - Reach out to me on GitHub - here's my [Github](https://github.com/${answers.contact})
-
-  - You can also email me directly by [email](${answers.email})
-  `;
-}
+//       fs.writeFile("README_test.md", updatedReadmeContent, (err) => {
+//         if (err) throw err;
+//         console.log("Default license information added to README.md");
+//       });
+//     }
+//   });
+// }
