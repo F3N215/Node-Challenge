@@ -4,34 +4,20 @@
 <p align="left"> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://jestjs.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> </p>
 
 #### _Links_
-* <a href="https://github.com/F3N215/pw-generator-challenge/blob/main/index.html">HTML</a>
-* <a href="https://github.com/F3N215/pw-generator-challenge/blob/main/style.css">CSS</a>
-* <a href="https://github.com/F3N215/pw-generator-challenge/blob/main/script.js">JS</a>
+* <a href="https://github.com/F3N215/Node-README-Generator/blob/main/Develop/utils/generateMarkdown.js">JS</a>
+* <a href="https://github.com/F3N215/Node-README-Generator/blob/main/Develop/index.js">JS</a>
+* <a href="https://github.com/F3N215/pw-generator-challenge/blob/main/index.html">Generated README File</a>
 
 -----
 ## Project Summary 📋
 * Your task is to create a command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package
 * Review the <a href="https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide">Professional README Guide</a> as a reminder
-* 
-* Using some basic starter code, I was asked to create a password generator application for a client with access to sensitive data 
-* The client requires a strong, randomly generated password that offers greater security, at least 8 characters and 128 characters in length 
-* A series of prompts allows users to input their designed characters and password length in order to proceed
-* Once completed the password displays in the window on the page and within the console
+* Using some basic starter code, I was tasked with creating a README generator that runs in the command line, invoked by node index.js
 -----
 # Initial Work & Study 💻  
-* Searched through previous classes and online tutorials on functions, loops, and conditional gates
-* Goal: to understand how functions could be used to call random characters (letters, numbers, symbols) without the application breaking or returning a false value
-* Sample prototype via tutorial which taught me what basic JS structure for a password generator might look like
-* Completed side project prototype
-
-
-
-# Collaboration Workflow 🦾
-* After reviewing some of my work with my mentor who helped further my understanding, I reworked the JavaScript to “clean it up”
-* Requested information details from Xpert Learning Assistant for assistance on proper syntax and understanding logic behind the code
-* Connected with my colleague Sahil for an all-day study session to test various updates and share ideas
-* Completed 2nd tutoring session requesting additional explanations and details of JavaScript logic and flow
-* Finally, reviewed additional JavaScript course materials and connected a final time with my mentor
+* Searched through previous classes from week 9
+* Reviewed and reverse-engineered similar projects
+* Convened with my mentor for guidance on syntax, function calls and integration with markdown formatting JS
 
 # References 📔
 * <a href="https://www.youtube.com/watch?v=duNmhKgtcsI">DopeDev</a>
@@ -39,9 +25,7 @@
 
 -----
 ## Screenshots 📸
-* ![Full Page View](images/Screenshot-1.png)
-* ![Logged to Console](images/Screenshot-2.png)
-* <a href="https://streamable.com/jc3307">Short Screen Recording</a>
+* <a href="https://streamable.com/r8sdjr">Short Screen Recording</a>
 
 -----
 ## About Me
