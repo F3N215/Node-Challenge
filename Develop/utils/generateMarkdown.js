@@ -94,14 +94,14 @@ function generateMarkdown(data) {
   ${renderLicenseSection(data.license)}
 
   ## Contributing
-  ${data.contribute}
+  ${data.contributionsInfo}
   
   ## Testing
-  ${data.test}
+  ${data.testsInfo}
 
   ## Any Questions?
   My GitHub: [${data.github}](https://github.com/${data.github}) <br>
-  Email me: ${data.email}
+  Email me: ${data.emailInfo}
 `;
 }
 
