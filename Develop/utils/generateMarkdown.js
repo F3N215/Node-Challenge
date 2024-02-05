@@ -5,11 +5,11 @@ function renderLicenseBadge(license) {
     return "";
   } else if (license == "Artistic-2.0") {
     return `[![License](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)`;
-  } else if (license == "Apache") {
+  } else if (license == "Apache-2.0") {
     return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
-  } else if (license == "BSD-2") {
+  } else if (license == "BSD-2-Clause") {
     return `[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)`;
-  } else if (license == "BSD-3") {
+  } else if (license == "BSD-3-Clause") {
     return `[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`;
   } else if (license == "CC") {
     return `[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)`;
@@ -33,11 +33,11 @@ function renderLicenseLink(license) {
     return "";
   } else if (license == "Artistic-2.0") {
     return `https://opensource.org/license/artistic-2-0`;
-  } else if (license == "Apache") {
+  } else if (license == "Apache-2.0") {
     return `https://opensource.org/licenses/Apache-2.0`;
-  } else if (license == "BSD-2") {
+  } else if (license == "BSD-2-Clause") {
     return `https://opensource.org/license/bsd-2-clause`;
-  } else if (license == "BSD-3") {
+  } else if (license == "BSD-3-Clause") {
     return `https://opensource.org/license/bsd-3-clause`;
   } else if (license == "CC") {
     return `https://creativecommons.org/licenses/by-nc/4.0`;
@@ -71,10 +71,12 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+
   ${renderLicenseBadge(data.license)}
 
   ## Description
-  ${data.description}
+
+  ${data.projectDescription}
 
   ## Table of Contents
 
@@ -86,22 +88,26 @@ function generateMarkdown(data) {
   * [Questions](#questions)
 
   ## Installation
+
   ${data.installInfo}
 
   ## Usage
-  ${data.useCase}
 
-  ## License
+  ${data.usageInfo}
+
   ${renderLicenseSection(data.license)}
 
   ## Contributing
-  ${data.contribute}
   
-  ## Testing
-  ${data.testing}
+  ${data.contributionsInfo}
+  
+  ## Tests
+  ${data.testsInfo}
 
-  ## Any Questions?
-  My GitHub: [${data.github}](https://github.com/${data.github}) <br>
+  ## Questions
+  My GitHub: [${data.githubUsername}](https://github.com/${
+    data.githubUsername
+  }) <br>
   Email me: ${data.emailInfo}
 `;
 }

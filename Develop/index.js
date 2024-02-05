@@ -39,7 +39,7 @@ const questions = [
     message: "Share any installation instructions here:",
   },
   {
-    type: "checkbox",
+    type: "list",
     name: "license",
     message: "Select a license for your project:",
     choices: [
@@ -64,28 +64,28 @@ const questions = [
   },
   {
     type: "input",
-    name: "useCase",
-    message: "Describe what your project or application is used for.",
+    name: "usageInfo",
+    message: "Describe the main use for your project.",
   },
   {
     type: "input",
-    name: "contribute",
-    message: "How can people contribute to your project?",
+    name: "contributionsInfo",
+    message: "Any guidelines for contributing?",
   },
   {
     type: "input",
-    name: "testing",
-    message: "How do you test your project?",
+    name: "testsInfo",
+    message: "Which tests would you like to include:",
   },
   {
     type: "input",
-    name: "github",
-    message: "What's your GitHub username?",
+    name: "githubUsername",
+    message: "What is your GitHub username?",
   },
   {
     type: "input",
     name: "emailInfo",
-    message: "What's your email?",
+    message: "What is youe email?",
   },
   {
     type: "confirm",
