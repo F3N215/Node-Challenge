@@ -91,18 +91,17 @@ function generateMarkdown(data) {
   ## Usage
   ${data.useCase}
 
+  ## License
   ${renderLicenseSection(data.license)}
 
   ## Contributing
-  ${data.contributionsInfo}
+  ${data.contribute}
   
   ## Testing
-  ${data.testsInfo}
+  ${data.testing}
 
   ## Any Questions?
-  My GitHub: [${data.githubUsername}](https://github.com/${
-    data.githubUsername
-  }) <br>
+  My GitHub: [${data.github}](https://github.com/${data.github}) <br>
   Email me: ${data.emailInfo}
 `;
 }

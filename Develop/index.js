@@ -64,22 +64,22 @@ const questions = [
   },
   {
     type: "input",
-    name: "usageInfo",
+    name: "useCase",
     message: "Describe what your project or application is used for.",
   },
   {
     type: "input",
-    name: "contributionsInfo",
+    name: "contribute",
     message: "How can people contribute to your project?",
   },
   {
     type: "input",
-    name: "testsInfo",
+    name: "testing",
     message: "How do you test your project?",
   },
   {
     type: "input",
-    name: "githubUsername",
+    name: "github",
     message: "What's your GitHub username?",
   },
   {
