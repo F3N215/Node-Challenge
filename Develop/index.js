@@ -7,7 +7,6 @@ const fs = require("fs");
 // placing within 'questions' will run it immediately
 // need separating the data structure in which we store the prompts from where we invoke them
 const questions = [
-  // needs to take a list of objects
   {
     type: "input",
     name: "title",
@@ -36,18 +35,8 @@ const questions = [
   },
   {
     type: "input",
-    name: "table",
-    message: "Share a Table of Contents",
-  },
-  {
-    type: "input",
     name: "installInfo",
     message: "Share any installation instructions here:",
-  },
-  {
-    type: "input",
-    name: "useCase",
-    message: "Describe what your project or application is used for.",
   },
   {
     type: "checkbox",
@@ -65,7 +54,6 @@ const questions = [
       "Boost",
       "ISC",
     ],
-
     validate: (choicesLength) => {
       if (choicesLength.length <= 1) {
         return true;
@@ -76,22 +64,27 @@ const questions = [
   },
   {
     type: "input",
-    name: "contribute",
+    name: "usageInfo",
+    message: "Describe what your project or application is used for.",
+  },
+  {
+    type: "input",
+    name: "contributionsInfo",
     message: "How can people contribute to your project?",
   },
   {
     type: "input",
-    name: "test",
+    name: "testsInfo",
     message: "How do you test your project?",
   },
   {
     type: "input",
-    name: "github",
+    name: "githubUsername",
     message: "What's your GitHub username?",
   },
   {
     type: "input",
-    name: "email",
+    name: "emailInfo",
     message: "What's your email?",
   },
   {
@@ -103,12 +96,16 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile("./dist/README.md", generateMarkdown(data), function (err) {
+  fs.writeFile("./drop/README.md", generateMarkdown(data), function (err) {
     if (err) {
       return console.log(err);
     }
     console.log("You did it!");
   });
+}
+
+function newFile(fileName, data) {
+  fs.writeFile("README_project.md", " ", () => {});
 }
 
 // TODO: Create a function to initialize app
@@ -122,39 +119,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-// function fetchLicense(licenseType, callback) {
-//   axios
-//     .get(`https://api.opensource.org/licenses/${licenseType}`)
-//     .then((response) => {
-//       callback(null, response.data.text);
-//     })
-//     .catch((error) => {
-//       console.error(
-//         `Error fetching license text for ${licenseType}: ${error.message}`
-//       );
-//       callback(error, null);
-//     });
-// }
-
-// function generateLicenseFile(licenseType, readmeContent) {
-//   fetchLicense(licenseType, (error, licenseText) => {
-//     if (!error && licenseText) {
-//       const updatedReadmeContent = `${readmeContent}\n\n## License\n\n${licenseText}`;
-
-//       fs.writeFile("README_test.md", updatedReadmeContent, (err) => {
-//         if (err) throw err;
-//         console.log("License information added to README.md");
-//       });
-//     } else {
-//       const defaultLicenseText = `This project is licensed under the ${licenseType} License. No detailed license text available.`;
-
-//       const updatedReadmeContent = `${readmeContent}\n\n## License\n\n${defaultLicenseText}`;
-
-//       fs.writeFile("README_test.md", updatedReadmeContent, (err) => {
-//         if (err) throw err;
-//         console.log("Default license information added to README.md");
-//       });
-//     }
-//   });
-// }
